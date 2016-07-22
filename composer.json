@@ -1,0 +1,15 @@
+{
+  "name": "atehnix/laravel-vk-requester",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "ATehnix",
+      "email": "atehnix@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.5.9",
+    "atehnix/vk-client": "dev-master"
+  }
+}
