@@ -18,10 +18,9 @@
       "email": "atehnix@gmail.com"
     }
   ],
-  "minimum-stability": "dev",
   "require": {
     "php": ">=5.5.9",
-    "atehnix/vk-client": "dev-master"
+    "atehnix/vk-client": "1.0.*"
   },
   "autoload": {
     "psr-4": {
