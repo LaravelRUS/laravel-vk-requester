@@ -32,7 +32,7 @@
 ## Установка
 ##### Для установки через [Composer](https://getcomposer.org/), выполнить:
 ```
-composer require atehnix/laravel-vk-requester:dev-master
+composer require atehnix/laravel-vk-requester
 ```
 
 ##### Добавить в массив `providers` в файле `config/app.php`:
