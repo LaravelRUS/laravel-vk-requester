@@ -22,5 +22,10 @@
   "require": {
     "php": ">=5.5.9",
     "atehnix/vk-client": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "ATehnix\\LaravelVkRequester\\": "src"
+    }
   }
 }
