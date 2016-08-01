@@ -1,4 +1,4 @@
-# Laravel Vk Requester
+# Laravel VK Requester
 
 Пакет предоставляет удобный способ выполнения запросов к API социальной сети Vk.Сom.
 
@@ -7,7 +7,7 @@
 
 Благодаря такому подходу можно гибко выстраивать цепочки из нескольких взаимосвязанных запросов.
 
-Например:
+##### Например:
 ```
 // Получить группы по списку ID
 - groups.getByIds
@@ -35,16 +35,16 @@
 composer require atehnix/laravel-vk-requester:dev-master
 ```
 
-Добавить в массив `providers` в файле `config/app.php`:
+##### Добавить в массив `providers` в файле `config/app.php`:
 ```php
 ATehnix\LaravelVkRequester\VkRequesterServiceProvider::class,
 ```
 
-Выполнить:
+##### Выполнить:
 ```
 php artisan vendor:publish --provider=ATehnix\LaravelVkRequester\VkRequesterServiceProvider
 ```
-и
+##### и
 ```
 php artisan migrate
 ```
@@ -93,7 +93,7 @@ VkRequest::create([
 ]);
 ```
 
-Каждую минуту по Cron'у из таблицы временного хранения все новые запросы переносится в основную очередь Laravel.
+Раз в минуту (по Cron'у) из таблицы временного хранения все новые запросы переносятся в основную очередь Laravel.
 
 Для уменьшения кол-ва реальных обращений к API, все запросы будут автоматически обернуты в ["execute-запросы"](https://vk.com/dev/execute) по 25 в каждом.
 
@@ -103,7 +103,7 @@ VkRequest::create([
 
 Метод `onSuccess($request, $response)` будет вызываться при успешном выполнении запроса, а метод `onFail($request, $error)` при неудачном.
 
-Пример:
+##### Пример:
 ```php
 <?php
 
