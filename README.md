@@ -54,7 +54,7 @@ php artisan migrate
 ## Получение токена
 Перед тем как начать отправлять запросы, необходимо получить API Token.
 Добавьте в `config/services.php`:
-```
+```php
 <?php return [
     // ...
 
@@ -69,8 +69,10 @@ php artisan migrate
 В файле `.env` укажите соответствующие параметры авторизации вашего [VK-приложения](https://vk.com/apps?act=manage).
 
 ##### Пример получения токена
-```
-Route::get('/vkauth', function (ATehnix\VkClient\Auth $auth) {
+```php
+<?php
+
+Route::get('/vkauth', function (\ATehnix\VkClient\Auth $auth) {
     echo "<a href='{$auth->getUrl()}'> Войти через VK.Com </a><hr>";
 
     if (\Request::exists('code')) {
