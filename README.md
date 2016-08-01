@@ -7,7 +7,7 @@
 
 Благодаря такому подходу можно гибко выстраивать цепочки из нескольких взаимосвязанных запросов.
 
-##### Например:
+#### Например:
 ```
 // Получить группы по списку ID
 - groups.getByIds
@@ -29,8 +29,8 @@
 А благодаря автоматическому оборачиванию запросов в ["execute-запросы"](https://vk.com/dev/execute) (по 25 в каждом), выполнение происходит в разы быстрее и понижается вероятность превышения лимитов Vk.Com на кол-во и частоту запросов.
 
 
-### Установка
-Для установки через [Composer](https://getcomposer.org/), выполнить:
+## Установка
+##### Для установки через [Composer](https://getcomposer.org/), выполнить:
 ```
 composer require atehnix/laravel-vk-requester:dev-master
 ```
@@ -49,8 +49,9 @@ php artisan vendor:publish --provider=ATehnix\LaravelVkRequester\VkRequesterServ
 php artisan migrate
 ```
 
+> Внимание! Предполагается, что в вашем Laravel проекте уже настроены [очереди](https://laravel.com/docs/master/queues) и [планировщик задач](https://laravel.com/docs/master/scheduling) (Cron).
 
-### Получение токена
+## Получение токена
 Перед тем как начать отправлять запросы, необходимо получить API Token.
 Добавьте в `config/services.php`:
 ```
@@ -81,7 +82,7 @@ Route::get('/vkauth', function (ATehnix\VkClient\Auth $auth) {
 Пример демонстрирует лишь сам принцип получения токена. Как и где вы будете его получать и хранить вы решаете сами.
 
 
-### Добавление запроса в очередь
+## Добавление запроса в очередь
 ```php
 <?php
 use ATehnix\LaravelVkRequester\Models\VkRequest;
@@ -98,12 +99,12 @@ VkRequest::create([
 Для уменьшения кол-ва реальных обращений к API, все запросы будут автоматически обернуты в ["execute-запросы"](https://vk.com/dev/execute) по 25 в каждом.
 
 
-### Подписка на события
+## Подписка на ответы API
 В качестве удобного способа подписки на ответы API рекомендуется использовать классы, наследованные от `ATehnix\LaravelVkRequester\Contracts\Subscriber`.
 
 Метод `onSuccess($request, $response)` будет вызываться при успешном выполнении запроса, а метод `onFail($request, $error)` при неудачном.
 
-##### Пример:
+#### Пример:
 ```php
 <?php
 
@@ -128,8 +129,22 @@ class WallGetSubscriber extends Subscriber
 }
 ```
 
+Все Subscriber'ы необходимо добавить в массив `$subscribe` провайдера `EventServiceProvider`.
 
-### Генерируемые события
+```php
+<?php
+
+class EventServiceProvider extends ServiceProvider
+{
+    protected $subscribe = [
+        WallGetSubscriber::class,
+    ];
+
+    // ...
+}
+```
+
+## Генерируемые события
 Конечно же, слушать ответы API можно и без создания Subscriber'а.
 Все запросы генерируют события определенного формата, которые вы можете "слушать" как описано в [разделе "Events"](https://laravel.com/docs/master/events) документации Laravel.
 
@@ -144,9 +159,9 @@ VkRequester.fail: wall.get #default
 ```
 
 
-### Тэгирование запросов
+## Тэгирование запросов
 По-умолчанию, в имени события присутствует тэг `#default`. При добавлении запроса вы можете в аттрибуте `tag` указать любое другое значение тега. Тэг позволяет добавить запросам дополнительный "признак", когда требуется отличать их от других запросов с тем же методом.
 
 
-### License
+## License
 [MIT](https://raw.github.com/atehnix/laravel-vk-requester/master/LICENSE)
