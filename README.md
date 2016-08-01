@@ -1,4 +1,6 @@
 # Laravel VK Requester
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/atehnix/laravel-vk-requester/master/LICENSE)
+[![Packagist Version](https://img.shields.io/packagist/v/atehnix/laravel-vk-requester.svg)](https://packagist.org/packages/atehnix/laravel-vk-requester)
 
 Пакет предоставляет удобный способ выполнения запросов к API социальной сети Vk.Сom.
 
@@ -152,12 +154,12 @@ class EventServiceProvider extends ServiceProvider
 
 ##### В случае успешного выполнения, генерируется событие формата:
 ```
-VkRequester.success: wall.get #default
+vk-requester.success: wall.get #default
 ```
 
 ##### В случае ошибки выполнения, генерируется событие формата:
 ```
-VkRequester.fail: wall.get #default
+vk-requester.fail: wall.get #default
 ```
 
 

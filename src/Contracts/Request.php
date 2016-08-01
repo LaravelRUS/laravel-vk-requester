@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace ATehnix\LaravelVkRequester\Contracts;
 
 use ATehnix\LaravelVkRequester\Contracts\Traits\MagicApiMethod;
@@ -31,6 +30,8 @@ abstract class Request extends VkRequest
     }
 
     /**
+     * Setter for Parameters
+     *
      * @param array $parameters
      */
     public function setParametersAttribute(array $parameters)
@@ -42,6 +43,8 @@ abstract class Request extends VkRequest
     }
 
     /**
+     * Define default parameters for request
+     *
      * @return array
      */
     abstract protected function getDefaultParameters();

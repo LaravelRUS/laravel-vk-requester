@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace ATehnix\LaravelVkRequester\Contracts;
 
 use ATehnix\LaravelVkRequester\Contracts\Traits\MagicApiMethod;
@@ -24,17 +23,23 @@ abstract class Subscriber
     use MagicApiMethod;
 
     /**
+     * Expected tag
+     *
      * @var string
      */
     protected $tag = 'default';
 
     /**
+     * Handling fail event
+     *
      * @param VkRequest $request
      * @param array $response
      */
     abstract public function onSuccess(VkRequest $request, array $response);
 
     /**
+     * Handling success event
+     *
      * @param VkRequest $request
      * @param array $error
      */
@@ -61,6 +66,8 @@ abstract class Subscriber
     }
 
     /**
+     * Convert error to Exception object
+     *
      * @param array $error
      * @return VkException
      */

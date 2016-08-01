@@ -19,8 +19,14 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
+/**
+ * Class SendBatch
+ */
 class SendBatch implements ShouldQueue
 {
+    /**
+     * Default delay befor sending request (in milliseconds)
+     */
     const DEFAULT_DELAY = 350;
     
     /**
@@ -31,26 +37,29 @@ class SendBatch implements ShouldQueue
     use Queueable, InteractsWithQueue, SerializesModels;
 
     /**
+     * API Token
+     *
      * @var string
      */
     protected $token;
 
     /**
+     * API Client
+     *
      * @var Client
      */
     protected $api;
 
     /**
-     * @var array
-     */
-    protected $requestIds;
-
-    /**
+     * Collection of requests
+     *
      * @var Collection
      */
     protected $requests;
 
     /**
+     * Collection of data responses
+     *
      * @var array
      */
     protected $responses;

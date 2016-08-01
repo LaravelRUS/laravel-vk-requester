@@ -7,10 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace ATehnix\LaravelVkRequester\Models;
-
-use Illuminate\Database\Eloquent\Builder;
 
 /**
  * Class VkRequest
@@ -23,11 +20,25 @@ use Illuminate\Database\Eloquent\Builder;
  */
 class VkRequest extends \Eloquent
 {
+    /**
+     * Default table for associating with requests
+     */
     const DEFAULT_TABLE = 'vk_requests';
-    const EVENT_FORMAT = 'vk-requester.%s: %s #%s';
-    const STATUS_FAIL = 'fail';
-    const STATUS_SUCCESS = 'success';
 
+    /**
+     * Format for name of events
+     */
+    const EVENT_FORMAT = 'vk-requester.%s: %s #%s';
+
+    /**
+     * Name of fail status
+     */
+    const STATUS_FAIL = 'fail';
+
+    /**
+     * Name of success status
+     */
+    const STATUS_SUCCESS = 'success';
 
     /**
      * The attributes that are mass assignable.

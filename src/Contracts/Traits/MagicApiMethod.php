@@ -7,15 +7,22 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace ATehnix\LaravelVkRequester\Contracts\Traits;
 
 use Illuminate\Support\Str;
 
+/**
+ * Trait MagicApiMethod
+ */
 trait MagicApiMethod
 {
     protected $apiMethod;
 
+    /**
+     * Get API Method by class name.
+     *
+     * @return string
+     */
     protected function getApiMethod()
     {
         if (!isset($this->apiMethod)) {

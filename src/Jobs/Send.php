@@ -17,23 +17,35 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
+/**
+ * Class Send
+ */
 class Send implements ShouldQueue
 {
+    /**
+     * Default delay befor sending request (in milliseconds)
+     */
     const DEFAULT_DELAY = 350;
     
     use Queueable, InteractsWithQueue, SerializesModels;
 
     /**
+     * API Client
+     *
      * @var Client
      */
     protected $api;
 
     /**
+     * Instance of request
+     *
      * @var VkRequest
      */
     protected $request;
 
     /**
+     * Data of response
+     *
      * @var array
      */
     protected $response;

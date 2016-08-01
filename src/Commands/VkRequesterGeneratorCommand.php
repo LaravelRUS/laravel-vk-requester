@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * This file is part of laravel-vk-requester package.
+ *
+ * @author ATehnix <atehnix@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace ATehnix\LaravelVkRequester\Commands;
 
 use ATehnix\LaravelVkRequester\Jobs\SendBatch;
@@ -10,9 +17,13 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 
 class VkRequesterGeneratorCommand extends Command
 {
-    const NUMBER_OF_REQUESTS = 25;
-    
     use DispatchesJobs;
+
+    /**
+     * Default number of nested requests
+     */
+    const NUMBER_OF_REQUESTS = 25;
+
     /**
      * The name and signature of the console command.
      *
@@ -29,8 +40,6 @@ class VkRequesterGeneratorCommand extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return mixed
      */
     public function handle()
     {
