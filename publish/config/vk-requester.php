@@ -73,5 +73,7 @@ return [
     | array of VkRequests to the SendBatch job and manually dispatch it.
     |
     */
+
     'auto_dispatch' => true,
+
 ];

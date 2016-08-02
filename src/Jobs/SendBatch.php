@@ -27,7 +27,7 @@ class SendBatch implements ShouldQueue
     use Queueable, InteractsWithQueue, SerializesModels;
     
     /**
-     * Default delay befor sending request (in milliseconds)
+     * Default delay before sending request (in milliseconds)
      */
     const DEFAULT_DELAY = 350;
 
