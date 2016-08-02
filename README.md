@@ -53,38 +53,6 @@ php artisan migrate
 
 > Внимание! Предполагается, что в вашем Laravel проекте уже настроены [очереди](https://laravel.com/docs/master/queues) и [планировщик задач](https://laravel.com/docs/master/scheduling) (Cron).
 
-## Получение токена
-Перед тем как начать отправлять запросы, необходимо получить API Token.
-Добавьте в `config/services.php`:
-```php
-<?php return [
-    // ...
-
-    'vkontakte' => [
-        'client_id'     => env('VKONTAKTE_KEY'),
-        'client_secret' => env('VKONTAKTE_SECRET'),
-        'redirect'      => env('VKONTAKTE_REDIRECT_URI'),
-    ],
-];
-```
-
-В файле `.env` укажите соответствующие параметры авторизации вашего [VK-приложения](https://vk.com/apps?act=manage).
-
-##### Пример получения токена
-```php
-<?php
-
-Route::get('/vkauth', function (\ATehnix\VkClient\Auth $auth) {
-    echo "<a href='{$auth->getUrl()}'> Войти через VK.Com </a><hr>";
-
-    if (\Request::exists('code')) {
-        echo 'Token: '.$auth->getToken(\Request::get('code'));
-    }
-});
-```
-
-Пример демонстрирует лишь сам принцип получения токена. Как и где вы будете его получать и хранить вы решаете сами.
-
 
 ## Добавление запроса в очередь
 ```php
@@ -166,6 +134,39 @@ vk-requester.fail: wall.get #default
 ## Тэгирование запросов
 По-умолчанию, в имени события присутствует тэг `#default`. При добавлении запроса вы можете в атрибуте `tag` указать любое другое значение тега. Тэг позволяет добавить запросам дополнительный "признак", когда требуется отличать их от других запросов с тем же методом.
 
+## Где взять API токен?
+Перед тем как начать отправлять запросы, необходимо получить API Token.
+Ниже представлен один из способов его получить.
+
+##### Добавьте в `config/services.php`:
+```php
+<?php return [
+    // ...
+
+    'vkontakte' => [
+        'client_id'     => env('VKONTAKTE_KEY'),
+        'client_secret' => env('VKONTAKTE_SECRET'),
+        'redirect'      => env('VKONTAKTE_REDIRECT_URI'),
+    ],
+];
+```
+
+В файле `.env` укажите соответствующие параметры авторизации вашего [VK-приложения](https://vk.com/apps?act=manage).
+
+##### Пример получения токена
+```php
+<?php
+
+Route::get('/vkauth', function (\ATehnix\VkClient\Auth $auth) {
+    echo "<a href='{$auth->getUrl()}'> Войти через VK.Com </a><hr>";
+
+    if (\Request::exists('code')) {
+        echo 'Token: '.$auth->getToken(\Request::get('code'));
+    }
+});
+```
+
+> Пример демонстрирует лишь сам принцип получения токена. Как и где вы будете его получать и хранить вы решаете сами.
 
 ## License
 [MIT](https://raw.github.com/atehnix/laravel-vk-requester/master/LICENSE)
