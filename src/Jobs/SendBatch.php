@@ -24,17 +24,12 @@ use Illuminate\Queue\SerializesModels;
  */
 class SendBatch implements ShouldQueue
 {
+    use Queueable, InteractsWithQueue, SerializesModels;
+    
     /**
      * Default delay befor sending request (in milliseconds)
      */
     const DEFAULT_DELAY = 350;
-    
-    /**
-     * Number of requests, nested in the "execute" request
-     */
-    const NUMBER_OF_REQUESTS = 5;
-
-    use Queueable, InteractsWithQueue, SerializesModels;
 
     /**
      * API Token
