@@ -141,14 +141,10 @@ class SendBatch implements ShouldQueue
      */
     protected function fireEvents()
     {
-        $requests = array_map(function (VkRequest $request, $response) {
+        array_map(function (VkRequest $request, $response) {
             $status = isset($response['error_code']) ? VkRequest::STATUS_FAIL : VkRequest::STATUS_SUCCESS;
             $event = sprintf(VkRequest::EVENT_FORMAT, $status, $request->method, $request->tag);
             event($event, [$request, $response]);
-
-            return $request;
         }, $this->requests->all(), $this->responses);
-
-        $this->requests = collect($requests);
     }
 }
