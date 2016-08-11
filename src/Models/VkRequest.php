@@ -17,6 +17,7 @@ namespace ATehnix\LaravelVkRequester\Models;
  * @property array $parameters
  * @property string $token
  * @property string $tag
+ * @property array $context
  */
 class VkRequest extends \Eloquent
 {
@@ -50,6 +51,7 @@ class VkRequest extends \Eloquent
         'parameters',
         'token',
         'tag',
+        'context',
     ];
 
     /**
@@ -68,7 +70,10 @@ class VkRequest extends \Eloquent
      *
      * @var array
      */
-    protected $casts = ['parameters' => 'array'];
+    protected $casts = [
+        'parameters' => 'array',
+        'context'    => 'array',
+    ];
 
     /**
      * Create a new VkRequest instance.

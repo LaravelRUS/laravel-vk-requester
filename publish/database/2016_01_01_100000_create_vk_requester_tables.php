@@ -27,6 +27,7 @@ class CreateVkRequesterTables extends Migration
             $table->text('parameters');
             $table->string('token');
             $table->string('tag')->default('default');
+            $table->text('context');
             $table->timestamps();
         });
     }
