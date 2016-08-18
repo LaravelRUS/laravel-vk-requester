@@ -30,6 +30,22 @@ abstract class Request extends VkRequest
     }
 
     /**
+     * Get or set value of parameter
+     *
+     * @param string $key
+     * @param null $newValue
+     * @return mixed
+     */
+    public function parameter(string $key, $newValue = null)
+    {
+        if (func_num_args() >= 2) {
+            $this->parameters = array_merge($this->parameters, [$key => $newValue]);
+        }
+
+        return isset($this->parameters[$key]) ? $this->parameters[$key] : null;
+    }
+
+    /**
      * Setter for Parameters
      *
      * @param array $parameters
