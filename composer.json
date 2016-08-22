@@ -20,7 +20,7 @@
   ],
   "require": {
     "php": ">=5.5.9",
-    "atehnix/vk-client": "1.0.*"
+    "atehnix/vk-client": "^1.0.0"
   },
   "autoload": {
     "psr-4": {
