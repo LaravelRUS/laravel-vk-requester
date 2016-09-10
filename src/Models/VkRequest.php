@@ -9,6 +9,8 @@
  */
 namespace ATehnix\LaravelVkRequester\Models;
 
+use Illuminate\Database\Eloquent\Model;
+
 /**
  * Class VkRequest
  *
@@ -19,7 +21,7 @@ namespace ATehnix\LaravelVkRequester\Models;
  * @property string $tag
  * @property array $context
  */
-class VkRequest extends \Eloquent
+class VkRequest extends Model
 {
     /**
      * Default table for associating with requests
