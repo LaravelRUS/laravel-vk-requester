@@ -1,6 +1,6 @@
 # Laravel VK Requester
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/atehnix/laravel-vk-requester/master/LICENSE)
 [![Packagist Version](https://img.shields.io/packagist/v/atehnix/laravel-vk-requester.svg)](https://packagist.org/packages/atehnix/laravel-vk-requester)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/atehnix/laravel-vk-requester/master/LICENSE)
 
 Пакет предоставляет удобный способ выполнения запросов к API социальной сети Vk.Сom.
 
@@ -158,11 +158,11 @@ vk-requester.fail: wall.get #default
 ```php
 <?php
 
-Route::get('/vkauth', function (\ATehnix\VkClient\Auth $auth) {
+Route::get('vkauth', function (\ATehnix\VkClient\Auth $auth) {
     echo "<a href='{$auth->getUrl()}'> Войти через VK.Com </a><hr>";
 
-    if (\Request::exists('code')) {
-        echo 'Token: '.$auth->getToken(\Request::get('code'));
+    if (Request::exists('code')) {
+        echo 'Token: '.$auth->getToken(Request::get('code'));
     }
 });
 ```
