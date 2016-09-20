@@ -19,13 +19,16 @@ return [
     |--------------------------------------------------------------------------
     |
     | To receive necessary permissions during authorization, fill scope
-    | parameter containing names of the required permissions separated by comma.
+    | parameter containing names of the required permissions as array items.
     |
     | See more at: https://vk.com/dev/permissions
     |
     */
 
-    'scope' => 'offline,wall',
+    'scope' => [
+        'offline',
+        'wall',
+    ],
 
     /*
     |--------------------------------------------------------------------------

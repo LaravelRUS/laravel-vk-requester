@@ -47,7 +47,7 @@ class VkRequesterServiceProvider extends ServiceProvider
                 config('services.vkontakte.client_id'),
                 config('services.vkontakte.client_secret'),
                 config('services.vkontakte.redirect'),
-                config('vk-requester.scope')
+                implode(',', config('vk-requester.scope', []))
             );
         });
 
