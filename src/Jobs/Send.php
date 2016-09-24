@@ -14,15 +14,13 @@ use ATehnix\VkClient\Client;
 use ATehnix\VkClient\Requests\Request;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
 
 /**
  * Class Send
  */
 class Send implements ShouldQueue
 {
-    use Queueable, InteractsWithQueue, SerializesModels;
+    use Queueable;
     
     /**
      * Default delay before sending request (in milliseconds)

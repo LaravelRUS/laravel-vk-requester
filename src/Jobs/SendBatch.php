@@ -16,15 +16,13 @@ use ATehnix\VkClient\Requests\Request;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
 
 /**
  * Class SendBatch
  */
 class SendBatch implements ShouldQueue
 {
-    use Queueable, InteractsWithQueue, SerializesModels;
+    use Queueable;
     
     /**
      * Default delay before sending request (in milliseconds)
