@@ -27,7 +27,6 @@ return [
 
     'scope' => [
         'offline',
-        'wall',
     ],
 
     /*
