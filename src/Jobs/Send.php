@@ -81,7 +81,7 @@ class Send implements ShouldQueue
     protected function sendToApi()
     {
         usleep(config('vk-requester.delay', self::DEFAULT_DELAY) * 1000);
-        $clientRequest = new Request($this->request->method, $this->request->parameters);
+        $clientRequest = new Request($this->request->method, $this->request->parameters, $this->request->token);
         $clientResponse = $this->api->send($clientRequest);
         $this->response = $this->getResponse($clientResponse);
     }
