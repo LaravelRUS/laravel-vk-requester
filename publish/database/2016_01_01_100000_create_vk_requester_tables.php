@@ -25,10 +25,10 @@ class CreateVkRequesterTables extends Migration
         Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
             $table->string('method');
-            $table->text('parameters');
-            $table->string('token');
+            $table->text('parameters')->nullable();
+            $table->string('token')->nullable();
             $table->string('tag')->default('default');
-            $table->text('context');
+            $table->text('context')->nullable();
             $table->timestamps();
         });
     }
@@ -38,6 +38,6 @@ class CreateVkRequesterTables extends Migration
      */
     public function down()
     {
-        Schema::drop($this->table);
+        Schema::dropIfExists($this->table);
     }
 }
