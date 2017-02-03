@@ -2,6 +2,8 @@
 [![Packagist Version](https://img.shields.io/packagist/v/atehnix/laravel-vk-requester.svg)](https://packagist.org/packages/atehnix/laravel-vk-requester)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/atehnix/laravel-vk-requester/master/LICENSE)
 
+> Внимание! Ветка для тестирования в Laravel 5.4. НЕ ИСПОЛЬЗУЙТЕ НА ПРОДАКШНЕ. ;)
+
 Пакет предоставляет удобный способ выполнения запросов к API социальной сети Vk.Сom.
 
 Запросы выполняются в фоновом режиме, используя систему очередей Laravel.
