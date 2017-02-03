@@ -27,7 +27,7 @@ abstract class Subscriber
      *
      * @var string
      */
-    protected $tag = '*';
+    protected $tag = 'default';
 
     /**
      * Handling fail event
