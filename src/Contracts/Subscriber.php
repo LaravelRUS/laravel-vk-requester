@@ -33,9 +33,9 @@ abstract class Subscriber
      * Handling fail event
      *
      * @param VkRequest $request
-     * @param array $response
+     * @param mixed $response
      */
-    abstract public function onSuccess(VkRequest $request, array $response);
+    abstract public function onSuccess(VkRequest $request, $response);
 
     /**
      * Handling success event

@@ -97,7 +97,7 @@ class WallGetSubscriber extends Subscriber
     /** @var string  Тэг запроса */
     protected $tag = 'default';
 
-    public function onSuccess(VkRequest $request, array $response)
+    public function onSuccess(VkRequest $request, $response)
     {
         foreach ($response['items'] as $item) {
             // do something...
