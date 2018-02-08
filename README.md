@@ -50,7 +50,7 @@ ATehnix\LaravelVkRequester\VkRequesterServiceProvider::class,
 
 ##### Выполнить:
 ```
-php artisan vendor:publish --provider=ATehnix\LaravelVkRequester\VkRequesterServiceProvider
+php artisan vendor:publish --provider="ATehnix\LaravelVkRequester\VkRequesterServiceProvider"
 ```
 ##### и
 ```
