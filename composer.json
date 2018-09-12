@@ -20,7 +20,7 @@
   ],
   "require": {
     "php": ">=5.5.9",
-    "laravel/framework": "^5.2,<5.7",
+    "laravel/framework": "^5.2,<5.8",
     "atehnix/vk-client": "^1.0.0"
   },
   "autoload": {
