@@ -1,6 +1,9 @@
 # Laravel VK Requester
-[![Packagist Version](https://img.shields.io/packagist/v/atehnix/laravel-vk-requester.svg)](https://packagist.org/packages/atehnix/laravel-vk-requester)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/atehnix/laravel-vk-requester/master/LICENSE)
+[![Packagist Version](https://img.shields.io/packagist/v/atehnix/laravel-vk-requester.svg)](https://packagist.org/packages/atehnix/laravel-vk-requester)
+[![Packagist Stats](https://poser.pugx.org/atehnix/laravel-vk-requester/downloads)](https://packagist.org/packages/atehnix/laravel-vk-requester/stats)
+
+
 
 Пакет предоставляет удобный способ выполнения запросов к API социальной сети Vk.Сom.
 
