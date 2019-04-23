@@ -30,7 +30,7 @@ abstract class Subscriber
     protected $tag = 'default';
 
     /**
-     * Handling fail event
+     * Handling success event
      *
      * @param VkRequest $request
      * @param mixed $response
@@ -38,7 +38,7 @@ abstract class Subscriber
     abstract public function onSuccess(VkRequest $request, $response);
 
     /**
-     * Handling success event
+     * Handling fail event
      *
      * @param VkRequest $request
      * @param array $error
